@@ -10,7 +10,9 @@ const theme = {
     font_secondary: '#A0A0A0'
   },
   shadows: {
-    primary: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))'
+    primary: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
+    text_shadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+    default: '0px 4px 4px rgba(0, 0, 0, 0.25)'
   },
   fonts: {
     roboto: '"Roboto", sans-serif',

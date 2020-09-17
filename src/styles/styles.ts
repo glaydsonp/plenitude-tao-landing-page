@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import styled, { css } from 'styled-components';
 import { shade } from 'polished';
+import footerBackgroundUrl from '../assets/images/footer-bg.svg';
 
 interface IProps {
   menuOpen: boolean;
@@ -23,11 +24,13 @@ export const PageOverlay = styled.div<IProps>`
   top: 0;
   left: 0;
 
-  z-index: 100;
+  /* z-index: 100; */
 
-  ${(props) => !props.menuOpen && css`
-    display: none;
-  `}
+  ${(props) =>
+    !props.menuOpen
+    && css`
+      display: none;
+    `}
 `;
 
 export const MobileButton = styled.button`
@@ -39,7 +42,7 @@ export const MobileButton = styled.button`
   position: fixed;
   left: 10px;
   top: 10px;
-  z-index: 101;
+  /* z-index: 101; */
 
   width: 40px;
   height: 40px;
@@ -56,7 +59,7 @@ export const MobileButton = styled.button`
 
 export const Nav = styled.nav<IProps>`
   max-width: 1440px;
-  height: 163px;
+  height: 100px;
   background: #fff;
 
   display: flex;
@@ -68,9 +71,11 @@ export const Nav = styled.nav<IProps>`
     transform: translateX(-50vw);
     transition: transform 0.3s;
 
-    ${(props) => props.menuOpen && css`
-     transform: translateX(0);
-    `}
+    ${(props) =>
+    props.menuOpen
+      && css`
+        transform: translateX(0);
+      `}
 
     background: #FEF5EA;
     box-shadow: ${(props) => props.theme.shadows.default};
@@ -85,7 +90,7 @@ export const Nav = styled.nav<IProps>`
     justify-content: center;
     padding: 0;
 
-    z-index: 100;
+    /* z-index: 100; */
   }
 
   a {
@@ -103,8 +108,8 @@ export const Nav = styled.nav<IProps>`
   }
 
   & > svg {
-    width: 450px;
-    margin: 40px -150px 0 -100px;
+    width: 14%;
+    /* margin: 40px -150px 0 -100px; */
 
     @media (max-width: 1150px) {
       margin-top: -10px;
@@ -138,7 +143,7 @@ export const OurSpace = styled.section`
     position: relative;
     padding: 10px;
 
-    z-index: 10;
+    /* z-index: 10; */
 
     h3 {
       font-size: 3rem;
@@ -171,7 +176,7 @@ export const OurSpace = styled.section`
         }
 
         svg {
-          background: #F4E9DC;
+          background: #f4e9dc;
           width: 160px;
           height: 160px;
           border-radius: 50%;
@@ -201,7 +206,7 @@ export const AromaterpaiaSection = styled.section`
   display: flex;
   align-items: center;
 
-  z-index: 20;
+  /* z-index: 20; */
 
   margin-top: 180px;
   padding: 0 100px;
@@ -210,7 +215,7 @@ export const AromaterpaiaSection = styled.section`
   @media (max-width: 1150px) {
     flex-direction: column;
 
-    background: #FEF5EA;
+    background: #fef5ea;
 
     margin-top: 20px;
     padding: 20px;
@@ -223,7 +228,7 @@ export const AromaterpaiaSection = styled.section`
     top: 0;
     left: 0;
 
-    z-index: -1;
+    /* z-index: -1; */
 
     width: 100%;
 
@@ -270,11 +275,11 @@ export const AromaterpaiaSection = styled.section`
 
       color: ${(props) => props.theme.colors.font_primary};
 
-      border: 1px solid #FFEBD3;
+      border: 1px solid #ffebd3;
       border-radius: 16px;
       padding: 10px 50px;
 
-      background: #FFEBD3;
+      background: #ffebd3;
 
       transition: 0.3s;
 
@@ -303,7 +308,7 @@ export const HipnobirthingSectionBackground = styled.div`
   position: absolute;
   top: 0;
   left: -50%;
-  z-index: -1;
+  /* z-index: -1; */
   margin-top: 20px;
 
   background: ${(props) => props.theme.colors.green};
@@ -324,7 +329,7 @@ export const HipnobirthingSection = styled.section`
   display: flex;
   align-items: center;
 
-  z-index: 20;
+  /* z-index: 20; */
 
   margin-top: 180px;
   max-width: 1440px;
@@ -419,7 +424,7 @@ export const FloatingCircleText = styled.p`
   background: ${(props) => props.theme.colors.dark_green};
   border-radius: 50%;
 
-  color: #Fff;
+  color: #fff;
 
   text-align: center;
   font-size: 24px;
@@ -428,22 +433,27 @@ export const FloatingCircleText = styled.p`
   @media (max-width: 1150px) {
     display: none;
   }
+`;
 
+export const FooterWrapper = styled.div`
+  max-width: 1440px;
+  display: flex;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 20px;
 `;
 
 export const Footer = styled.footer`
   display: flex;
 
-  height: 200px;
+  height: 400px;
   width: 100%;
-  max-width: 1440px;
-
-  margin-top: 50px;
-  padding-right: 100px;
+  /* max-width: 1440px; */
 
   color: ${(props) => props.theme.colors.font_primary};
-  background: #F4F4F4;
-  padding-bottom: 250px;
+  background-image: url('./footer-bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @media (max-width: 1150px) {
     flex-direction: column;
@@ -456,27 +466,26 @@ export const Footer = styled.footer`
 
   & .background {
     position: absolute;
-
-    margin-top: -170px;
     max-width: 1440px;
-    left: 0;
-    right: 0;
-    z-index: 20;
-    overflow-x: hidden;
 
-    @media (max-width: 1150px) {
+    /* left: 0;
+    right: 0;
+    z-index: 20; */
+    /* overflow-x: hidden; */
+
+    /* @media (max-width: 1150px) {
       display: none;
-    }
+    } */
   }
 
   & .logo {
-    width: 100%;
+    /* width: 100%; */
 
-    z-index: 21;
+    /* z-index: 21; */
 
-    @media (max-width: 1150px) {
+    /* @media (max-width: 1150px) {
       display: none;
-    }
+    } */
   }
 `;
 
@@ -487,18 +496,18 @@ export const FooterLinks = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
 
-  position: relative;
-  z-index: 21;
+  /* position: relative; */
+  /* z-index: 21; */
 
-  width: 100%;
-  margin-left: -100px;
+  /* width: 100%; */
+  /* margin-left: -100px; */
 
-  @media (max-width: 1150px) {
+  /* @media (max-width: 1150px) {
     margin-left: 0;
     height: 400px;
 
     padding: 0 20px;
-  }
+  } */
 
   ul {
     list-style: none;
@@ -509,7 +518,7 @@ export const FooterLinks = styled.div`
     flex-direction: column;
 
     @media (max-width: 1150px) {
-      /* margin: 0 auto; */
+      margin: 0 auto;
     }
 
     li {
@@ -525,15 +534,15 @@ export const FooterLinks = styled.div`
 `;
 
 export const FooterContact = styled.div`
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: flex-start;
 
-  max-width: 210px;
+  max-width: 210px; */
 
-  position: relative;
-  z-index: 21;
-
+  /* position: relative; */
+  /* z-index: 21; */
+  /*
   span {
     margin-left: 0;
 
@@ -549,7 +558,7 @@ export const FooterContact = styled.div`
     margin: auto;
     text-align: center;
     padding-bottom: 20px;
-  }
+  } */
 `;
 
 export const ContactIcons = styled.div`

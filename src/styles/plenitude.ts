@@ -4,6 +4,8 @@ interface IProps {
   menuOpen: boolean;
 }
 
+export const Container = styled.section``;
+
 export const MenuButton = styled.div`
   button {
     position: absolute;

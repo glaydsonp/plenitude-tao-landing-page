@@ -11,13 +11,8 @@ import {
   HipnobirthingSection,
   HipnobirthingSectionBackground,
   FloatingCircleText,
-  Footer,
-  FooterLinks,
-  FooterContact,
-  ContactIcons,
   MobileButton,
-  PageOverlay,
-  FooterWrapper
+  PageOverlay
 } from '../styles/styles';
 
 import AromaterapiaImg from '../assets/images/aromaterapia-img.jpg';
@@ -34,14 +29,13 @@ import LaserIlib from '../assets/icons/laser-ilib.svg';
 import MobileMenuIcon from '../assets/icons/mobile-menu-button.svg';
 
 // Contact icons
-import LinkedinLogo from '../assets/icons/linkedin.svg';
-import FacebookLogo from '../assets/icons/facebook.svg';
-import InstagramLogo from '../assets/icons/instagram.svg';
 
 // Backgrounds
 import BackgroundTop from '../assets/images/home-top-background.svg';
 import BackgroundMiddle from '../assets/images/home-middle-background.svg';
 import BackgroundBottom from '../assets/images/home-bottom-background.svg';
+import LinkComponent from '../components/LinkComponent';
+import FooterComponent from '../components/FooterComponent/FooterComponent';
 
 const Home: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,7 +47,7 @@ const Home: React.FC = () => {
   const pageTitle = 'Plenitude Tao';
 
   return (
-    <div>
+    <>
       <Head>
         <title>{pageTitle}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -144,111 +138,9 @@ const Home: React.FC = () => {
           <img src={HipnobirthingImg} alt="HipnobirthingImg" />
         </HipnobirthingSection>
 
-        <Footer>
-          {/* <div className="background">
-            <BackgroundBottom />
-          </div> */}
-
-          <FooterWrapper>
-            <div className="logo">
-              <NavLogo />
-            </div>
-            <FooterLinks>
-              <ul>
-                <li>
-                  <span>PLENITUDE</span>
-                </li>
-                <li>
-                  <a>Nossa história</a>
-                </li>
-                <li>
-                  <a>Bastidores</a>
-                </li>
-              </ul>
-
-              <ul>
-                <li>
-                  <span>BLOG</span>
-                </li>
-                <li>
-                  <a>Destaque</a>
-                </li>
-                <li>
-                  <a>E-book</a>
-                </li>
-              </ul>
-
-              <ul>
-                <li>
-                  <span>SERVIÇOS</span>
-                </li>
-                <li>
-                  <a>Aromaterapia</a>
-                </li>
-                <li>
-                  <a>Thetahealing</a>
-                </li>
-                <li>
-                  <a>Hipnobirthing</a>
-                </li>
-                <li>
-                  <a>Laser</a>
-                </li>
-                <li>
-                  <a>Hipnose</a>
-                </li>
-                <li>
-                  <a>Acupuntura</a>
-                </li>
-                <li>
-                  <a>Terapia de Regressão</a>
-                </li>
-              </ul>
-
-              <ul>
-                <li>
-                  <span>LOJA</span>
-                </li>
-                <li>
-                  <a>Óleos essenciais</a>
-                </li>
-                <li>
-                  <a>Kit</a>
-                </li>
-                <li>
-                  <a>Umificador de ar</a>
-                </li>
-              </ul>
-
-              <ul>
-                <li>
-                  <span>AGENDA</span>
-                </li>
-                <li>
-                  <a>Eventos</a>
-                </li>
-                <li>
-                  <a>Live</a>
-                </li>
-              </ul>
-            </FooterLinks>
-            <FooterContact>
-              <span>FALE COM A GENTE</span>
-              <ContactIcons>
-                <LinkedinLogo />
-                <FacebookLogo />
-                <InstagramLogo />
-              </ContactIcons>
-              <span>(19) 99692-1161</span>
-              <span>
-                Rua José Carlos Leme Franco Guimarães, 544 - Sala 2 jardim
-                Margarida - Pirassununga - SP 13630-613
-              </span>
-            </FooterContact>
-          </FooterWrapper>
-        </Footer>
+        <FooterComponent />
       </Container>
-    </div>
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 import NavLogo from '../../assets/icons/plenitude-logo.svg';
 
@@ -107,6 +108,13 @@ const FooterComponent: React.FC = () => {
     }
   ];
 
+  const rua = 'Rua José Carlos Leme Franco Guimarães, 544 - Sala 2';
+  const bairro = 'Jardim Margarida';
+  const cidade = 'Pirassununga - SP';
+  const cep = '13630-613';
+  const phoneNumber = '(19) 99692-1161';
+  const address = `${rua} ${bairro} - ${cidade} - ${cep}`;
+
   return (
     <Footer>
       <FooterWrapper>
@@ -117,79 +125,38 @@ const FooterComponent: React.FC = () => {
         <FooterLinks>
           <FooterGroupLinksComponent title="Plenitude" links={linksPlenitude} />
           <FooterGroupLinksComponent title="Blog" links={linksBlog} />
-          {/* <FooterGroupLinks>
-            <FooterTitle>Plenitude</FooterTitle>
-            {linksPlenitude.map((item) => (
-              <LinkComponent
-                description={item.description}
-                link={item.link}
-                key={item.id}
-              />
-            ))}
-          </FooterGroupLinks>
-          <FooterGroupLinks>
-            <FooterTitle>Blog</FooterTitle>
-            {linksBlog.map((item) => (
-              <LinkComponent
-                description={item.description}
-                link={item.link}
-                key={item.id}
-              />
-            ))}
-          </FooterGroupLinks> */}
         </FooterLinks>
 
         <FooterLinks>
           <FooterGroupLinksComponent title="Serviços" links={linksServicos} />
-          {/* <FooterGroupLinks>
-            <FooterTitle>Serviços</FooterTitle>
-            {linksServicos.map((item) => (
-              <LinkComponent
-                description={item.description}
-                link={item.link}
-                key={item.id}
-              />
-            ))}
-          </FooterGroupLinks> */}
         </FooterLinks>
 
         <FooterLinks>
           <FooterGroupLinksComponent title="Loja" links={linksLoja} />
           <FooterGroupLinksComponent title="Agenda" links={linksAgenda} />
-          {/* <FooterGroupLinks>
-            <FooterTitle>Loja</FooterTitle>
-            {linksLoja.map((item) => (
-              <LinkComponent
-                description={item.description}
-                link={item.link}
-                key={item.id}
-              />
-            ))}
-          </FooterGroupLinks>
-          <FooterGroupLinks>
-            <FooterTitle>Agenda</FooterTitle>
-            {linksAgenda.map((item) => (
-              <LinkComponent
-                description={item.description}
-                link={item.link}
-                key={item.id}
-              />
-            ))}
-          </FooterGroupLinks> */}
         </FooterLinks>
 
         <FooterContact>
           <h3>FALE COM A GENTE</h3>
           <ContactIcons>
-            <LinkedinLogo />
-            <FacebookLogo />
-            <InstagramLogo />
+            <Link href="#">
+              <a>
+                <LinkedinLogo />
+              </a>
+            </Link>
+            <Link href="#">
+              <a>
+                <FacebookLogo />
+              </a>
+            </Link>
+            <Link href="#">
+              <a>
+                <InstagramLogo />
+              </a>
+            </Link>
           </ContactIcons>
-          <div>(19) 99692-1161</div>
-          <div>
-            Rua José Carlos Leme Franco Guimarães, 544 - Sala 2 jardim Margarida
-            - Pirassununga - SP 13630-613
-          </div>
+          <div>{phoneNumber}</div>
+          <div>{address}</div>
         </FooterContact>
       </FooterWrapper>
     </Footer>

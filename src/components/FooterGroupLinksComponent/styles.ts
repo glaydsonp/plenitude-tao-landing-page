@@ -1,7 +1,9 @@
+import { shade } from 'polished';
 import styled from 'styled-components';
 
 export const FooterTitle = styled.h3`
-  font-weight: bold;
+  font-weight: normal;
+  text-transform: uppercase;
 `;
 
 export const FooterGroupLinks = styled.div`
@@ -9,4 +11,17 @@ export const FooterGroupLinks = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  padding-bottom: 20px;
+
+  a {
+    text-decoration: none;
+    font-weight: 100;
+    color: ${(props) => props.theme.colors.font_primary};
+    transition: 0.2s;
+
+    &:hover {
+      color: ${shade(0.4, '#6B3A00')};
+      text-shadow: ${(props) => props.theme.shadows.text_shadow};
+    }
+  }
 `;

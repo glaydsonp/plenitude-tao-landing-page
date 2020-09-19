@@ -4,10 +4,9 @@ export const FooterWrapper = styled.div`
   max-width: 1440px;
   display: flex;
   width: 100%;
-  margin-top: auto;
-  margin-bottom: 20px;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin: auto auto 20px auto;
 
   @media (max-width: 760px) {
     padding-top: 125px;
@@ -17,13 +16,18 @@ export const FooterWrapper = styled.div`
 export const Footer = styled.footer`
   display: flex;
 
-  height: 400px;
+  height: 350px;
   width: 100%;
 
   color: ${(props) => props.theme.colors.font_primary};
   background-image: url('./footer-bg.svg');
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (min-width: 1151px) {
+    position: relative;
+    z-index: 100;
+  }
 
   @media (max-width: 1150px) {
     flex-direction: column;

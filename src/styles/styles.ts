@@ -1,10 +1,5 @@
 /* eslint-disable prettier/prettier */
-import styled, { css } from 'styled-components';
-import { shade } from 'polished';
-
-interface IProps {
-  menuOpen: boolean;
-}
+import styled from 'styled-components';
 
 export const Container = styled.div`
   background: #fff;
@@ -14,221 +9,26 @@ export const Container = styled.div`
   }
 `;
 
-export const PageOverlay = styled.div<IProps>`
-  width: 100%;
-  height: 100vh;
-
-  background: rgba(0, 0, 0, 0.6);
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  /* z-index: 100; */
-
-  ${(props) =>
-    !props.menuOpen
-    && css`
-      display: none;
-    `}
-`;
-
-export const MobileButton = styled.button`
-  display: none;
-
-  background: none;
-  border: none;
-
-  position: fixed;
-  left: 10px;
-  top: 10px;
-  /* z-index: 101; */
-
-  width: 40px;
-  height: 40px;
-
-  & > svg {
-    width: 40px;
-    height: 38px;
-  }
-
-  @media (max-width: 1150px) {
-    display: block;
-  }
-`;
-
-export const Nav = styled.nav<IProps>`
-  max-width: 1440px;
-  height: 100px;
-  background: #fff;
-
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 0 100px;
-
-  @media (max-width: 1150px) {
-    transform: translateX(-50vw);
-    transition: transform 0.3s;
-
-    ${(props) =>
-    props.menuOpen
-      && css`
-        transform: translateX(0);
-      `}
-
-    background: #FEF5EA;
-    box-shadow: ${(props) => props.theme.shadows.default};
-
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 50%;
-
-    flex-direction: column;
-    justify-content: center;
-    padding: 0;
-
-    /* z-index: 100; */
-  }
-
-  a {
-    text-decoration: none;
-    color: ${(props) => props.theme.colors.font_primary};
-    font-size: 36px;
-    font-weight: 300;
-    transition: 0.2s;
-    display: block;
-
-    &:hover {
-      color: ${shade(0.4, '#6B3A00')};
-      text-shadow: ${(props) => props.theme.shadows.text_shadow};
-    }
-  }
-
-  & > svg {
-    width: 14%;
-    /* margin: 40px -150px 0 -100px; */
-
-    @media (max-width: 1150px) {
-      margin-top: -10px;
-      margin-bottom: -60px;
-    }
-  }
-`;
-
-export const OurSpace = styled.section`
-  position: relative;
-
-  max-width: 1440px;
-
-  & > svg {
-    margin-top: -15%;
-
-    position: absolute;
-    top: 0;
-
-    width: 100%;
-
-    @media (max-width: 1150px) {
-      display: none;
-    }
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-
-    position: relative;
-    padding: 10px;
-
-    /* z-index: 10; */
-
-    h3 {
-      font-size: 3rem;
-      font-weight: 300;
-
-      @media (max-width: 1150px) {
-        font-size: 7vw;
-
-        text-align: center;
-      }
-    }
-
-    ul {
-      list-style: none;
-      margin-top: 20px;
-
-      display: flex;
-      flex-wrap: wrap;
-
-      li {
-        display: flex;
-        flex-direction: column;
-
-        max-width: 160px;
-
-        & + li {
-          @media (min-width: 1024px) {
-            margin-left: 27px;
-          }
-        }
-
-        svg {
-          background: #f4e9dc;
-          width: 160px;
-          height: 160px;
-          border-radius: 50%;
-
-          padding: 25px;
-          overflow: visible;
-        }
-
-        span {
-          font-size: 22px;
-          font-weight: 300;
-
-          text-align: center;
-
-          @media (max-width: 1150px) {
-            font-size: 22px;
-          }
-        }
-      }
-    }
-  }
-`;
-
 export const AromaterpaiaSection = styled.section`
   position: relative;
-
   display: flex;
   align-items: center;
-
-  /* z-index: 20; */
-
   margin-top: 180px;
   padding: 0 100px;
   max-width: 1440px;
 
   @media (max-width: 1150px) {
     flex-direction: column;
-
     background: #fef5ea;
-
     margin-top: 20px;
     padding: 20px;
   }
 
   & > svg {
     margin-top: -15%;
-
     position: absolute;
     top: 0;
     left: 0;
-
-    /* z-index: -1; */
-
     width: 100%;
 
     @media (max-width: 1150px) {
@@ -240,7 +40,6 @@ export const AromaterpaiaSection = styled.section`
   div {
     display: flex;
     flex-direction: column;
-
     margin-right: 50px;
 
     @media (max-width: 1150px) {
@@ -258,7 +57,6 @@ export const AromaterpaiaSection = styled.section`
     p {
       font-size: 28px;
       text-align: center;
-
       color: ${(props) => props.theme.colors.font_secondary};
 
       @media (max-width: 1150px) {
@@ -268,18 +66,13 @@ export const AromaterpaiaSection = styled.section`
 
     button {
       margin-top: 20px;
-
       font-size: 36px;
       font-weight: 300;
-
       color: ${(props) => props.theme.colors.font_primary};
-
       border: 1px solid #ffebd3;
       border-radius: 16px;
       padding: 10px 50px;
-
       background: #ffebd3;
-
       transition: 0.3s;
 
       &:hover {
@@ -303,47 +96,44 @@ export const AromaterpaiaSection = styled.section`
   }
 `;
 
-export const HipnobirthingSectionBackground = styled.div`
-  position: absolute;
-  top: 0;
-  left: -50%;
-  /* z-index: -1; */
-  margin-top: 20px;
-
-  background: ${(props) => props.theme.colors.green};
-  width: 200vw;
-  height: 100%;
-  transform: skewY(2deg);
-
-  @media (max-width: 1367px) {
-    margin-top: -20px;
-    left: 0;
-    width: 100vw;
-  }
-`;
-
 export const HipnobirthingSection = styled.section`
-  position: relative;
-
   display: flex;
   align-items: center;
+  width: 100vw;
+  transform: skewY(2deg);
+  background: ${(props) => props.theme.colors.green};
 
-  /* z-index: 20; */
-
-  margin-top: 180px;
-  max-width: 1440px;
+  @media (min-width: 1151px) {
+    position: relative;
+    top: 85px;
+    z-index: 90;
+  }
 
   @media (max-width: 1150px) {
     margin-top: 100px;
     flex-direction: column;
-
     padding: 20px;
   }
+`;
 
-  div {
+export const HipnobirthingSectionWrapper = styled.div`
+  color: ${(props) => props.theme.colors.font_primary};
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  padding: 10px 30px;
+  justify-content: center;
+  align-items: center;
+  transform: skewY(-2deg);
+
+  @media (max-width: 760px) {
+    flex-direction: column;
+  }
+
+  > div {
     display: flex;
     flex-direction: column;
-
     margin-bottom: 90px;
     margin-right: 50px;
     padding: 0 40px 0 100px;
@@ -366,7 +156,6 @@ export const HipnobirthingSection = styled.section`
       font-size: 24px;
       font-weight: 300;
       text-align: center;
-
       color: #fff;
 
       @media (max-width: 1150px) {
@@ -379,14 +168,10 @@ export const HipnobirthingSection = styled.section`
       border: 1px solid #fff;
       border-radius: 16px;
       padding: 10px 50px;
-
       background: ${(props) => props.theme.colors.green};
-
       font-size: 36px;
       font-weight: 300;
-
       color: #fff;
-
       transition: 0.3s;
 
       &:hover {
@@ -403,7 +188,6 @@ export const HipnobirthingSection = styled.section`
 
     @media (max-width: 1150px) {
       margin-top: 30px;
-
       border-radius: 40px;
     }
   }

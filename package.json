@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:export": "next build && next export",
     "start": "next start"
   },
   "husky": {
@@ -50,6 +51,7 @@
   "dependencies": {
     "@next/bundle-analyzer": "^9.5.3",
     "next": "9.5.3",
+    "next-compose-plugins": "^2.2.0",
     "next-images": "^1.4.1",
     "next-seo": "^4.7.3",
     "polished": "^3.6.6",

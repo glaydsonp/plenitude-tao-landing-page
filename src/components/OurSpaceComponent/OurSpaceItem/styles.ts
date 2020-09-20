@@ -5,7 +5,7 @@ export const OurSpaceIcon = styled.div`
   height: 90%;
   width: 100%;
   border-radius: 100%;
-  padding: 40px;
+  padding: 30px;
 
   img {
     height: 100%;
@@ -21,8 +21,8 @@ export const OurSpaceDescription = styled.h3`
 `;
 
 export const OurSpaceItemWrapper = styled.div`
-  height: 210px;
-  width: 180px;
+  height: 145px;
+  width: 130px;
   cursor: pointer;
 
   @media (max-width: 760px) {

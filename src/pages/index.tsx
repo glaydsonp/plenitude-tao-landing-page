@@ -1,14 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
 
-// eslint-disable-next-line object-curly-newline
+import { Container } from '../styles/styles';
 import {
-  Container,
-  AromaterpaiaSection,
+  AromaterapiaSectionWrapper,
+  AromaterapiaText,
+  AromaterapiaSection
+} from '../styles/components/AromaterapiaStyles';
+import {
   HipnobirthingSection,
+  HipnobirthingSectionWrapper,
   FloatingCircleText,
-  HipnobirthingSectionWrapper
-} from '../styles/styles';
+  HipnobirthingSectionText
+} from '../styles/components/HipnobirthingStyles';
 
 import AromaterapiaImg from '../assets/images/aromaterapia-img.jpg';
 import HipnobirthingImg from '../assets/images/hipnobirthing-background.jpg';
@@ -19,13 +23,12 @@ import HeroComponent from '../components/HeroComponent';
 import OurSpaceComponent from '../components/OurSpaceComponent';
 
 const Home: React.FC = () => {
-  const pageTitle = 'Plenitude Tao';
+  const pageTitle = 'Plenitude Tao - A Sabedoria do Tao';
 
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Container>
@@ -33,25 +36,27 @@ const Home: React.FC = () => {
         <HeroComponent />
         <OurSpaceComponent />
 
-        <AromaterpaiaSection>
-          <div>
-            <h3>Aromaterapia</h3>
-            <p>
-              Aromaterapia é integrar o homem com a flora! Essa é a essência da
-              aromaterapia, uma ciência que traz a alquimia dos óleos
-              essenciais, extraídos de diversas floras, flores e caules; para o
-              benefício da saúde de todos os seres!
-            </p>
-            <button type="button">SAIBA MAIS</button>
-          </div>
+        <AromaterapiaSection>
+          <AromaterapiaSectionWrapper>
+            <AromaterapiaText>
+              <h3>Aromaterapia</h3>
+              <p>
+                Aromaterapia é integrar o homem com a flora! Essa é a essência
+                da aromaterapia, uma ciência que traz a alquimia dos óleos
+                essenciais, extraídos de diversas floras, flores e caules; para
+                o benefício da saúde de todos os seres!
+              </p>
+              <button type="button">SAIBA MAIS</button>
+            </AromaterapiaText>
 
-          <img src={AromaterapiaImg} alt="aromaterapia" />
-        </AromaterpaiaSection>
+            <img src={AromaterapiaImg} alt="aromaterapia" />
+          </AromaterapiaSectionWrapper>
+        </AromaterapiaSection>
 
         <HipnobirthingSection>
           <HipnobirthingSectionWrapper>
             <FloatingCircleText>Nossa exclusividade</FloatingCircleText>
-            <div>
+            <HipnobirthingSectionText>
               <h3>Hipnobirthing</h3>
               <p>
                 A hipnose no trabalho de parto auxilia essas mulheres no
@@ -61,7 +66,7 @@ const Home: React.FC = () => {
                 confiança e foco.
               </p>
               <button type="button">SAIBA MAIS</button>
-            </div>
+            </HipnobirthingSectionText>
 
             <img src={HipnobirthingImg} alt="HipnobirthingImg" />
           </HipnobirthingSectionWrapper>

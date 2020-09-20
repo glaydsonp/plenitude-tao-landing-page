@@ -10,7 +10,6 @@ export default createGlobalStyle`
 
   body {
     /* background: #fff; */
-    background: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.font_primary};
     font-family: ${(props) => props.theme.fonts.openSans};
     overflow-x: hidden;
@@ -18,5 +17,9 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  #__next {
+    overflow: hidden;
   }
 `;

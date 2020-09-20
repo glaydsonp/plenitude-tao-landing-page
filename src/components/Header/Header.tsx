@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import LinkComponent from '../LinkComponent';
 
 import MobileMenuIcon from '../../assets/icons/mobile-menu-button.svg';
-import NavLogo from '../../assets/icons/plenitude-logo.svg';
 
 import { PageOverlay, MobileButton, Nav } from './styles';
 
@@ -17,22 +17,22 @@ const Header: React.FC = () => {
     {
       id: 1,
       description: 'Plenitude',
-      link: '#'
+      link: '/plenitude'
     },
     {
       id: 2,
       description: 'Blog',
-      link: '#'
+      link: '/#'
     },
     {
       id: 3,
       description: 'Loja',
-      link: '#'
+      link: '/#'
     },
     {
       id: 4,
       description: 'Contato',
-      link: '#'
+      link: '/#'
     }
   ];
 
@@ -52,7 +52,12 @@ const Header: React.FC = () => {
             link={item.link}
           />
         ))}
-        <NavLogo />
+        <Link href="/">
+          <a>
+            {/* <NavLogo /> */}
+            <img src="/logo-topo.png" alt="Plenitude Tao" />
+          </a>
+        </Link>
         {navLinks.map((item) => (
           <LinkComponent
             key={item.id}

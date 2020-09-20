@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
+import Head from 'next/head';
 
 import {
   Container,
@@ -9,8 +9,13 @@ import {
   VideoSection,
   Footer,
   MenuButton,
-  MenuOverlay
+  MenuOverlay,
+  ContentSectionLeft,
+  ContentSectionRight,
+  ContentSectionWrapper
 } from '../styles/plenitude';
+
+import NAV_MENU_LINKS from '../app.config';
 
 import MobileMenuIcon from '../assets/icons/mobile-menu-button.svg';
 import HeaderLogoImg from '../assets/images/plenitude-header-logo.jpg';
@@ -22,7 +27,8 @@ import PlayIcon from '../assets/icons/play-button-icon.svg';
 
 import FooterHouseImg from '../assets/images/footer-house.svg';
 import FooterPersonImg from '../assets/images/footer-person.svg';
-import NavLogo from '../assets/icons/plenitude-logo.svg';
+import { ILink } from '../data/ILinks.interface';
+import LinkComponent from '../components/LinkComponent';
 
 const PlenitudePage: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,8 +37,14 @@ const PlenitudePage: React.FC = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const navLinks = NAV_MENU_LINKS as ILink[];
+  const pageTitle = 'Plenitude Tao - A Sabedoria do Tao';
+
   return (
     <>
+      <Head>
+        <title>{pageTitle}</title>
+      </Head>
       <Container>
         <MenuButton>
           <button type="button" onClick={openMenu}>
@@ -41,49 +53,58 @@ const PlenitudePage: React.FC = () => {
         </MenuButton>
 
         <Menu menuOpen={menuOpen}>
-          <Link href="/">Home</Link>
-          <Link href="/">Blog</Link>
-          <NavLogo />
-          <Link href="/">Loja</Link>
-          <Link href="/">Contato</Link>
+          {/* <NavLogo /> */}
+          <img src="/logo-nav.png" alt="Plenitude Tao" />
+          {navLinks.map((item) => (
+            <LinkComponent
+              key={item.id}
+              link={item.link}
+              description={item.description}
+            />
+          ))}
         </Menu>
-        <MenuOverlay menuOpen={menuOpen} />
+        <MenuOverlay menuOpen={menuOpen} onClick={openMenu} />
 
         <HeaderLogo>
           <img src={HeaderLogoImg} alt="headerLogo" />
         </HeaderLogo>
 
-        <ContentSection>
-          <p className="first_text">
-            Tao (em chinês: A; Wade-Giles: tao; pinyin: dao) é o caracter chinês
-            para Caminho. Dentro do contexto da filosofia tradicional e região
-            Chinesa, o Tao é o conhecimento intuitivo da &quot;vida&quot; que
-            não não pode ser apreendido completamente - tão somente - como um
-            ser conhecido, no entando, através da experiência de vida real,
-            cotidiana.
-          </p>
+        <ContentSectionWrapper>
+          <ContentSection>
+            <ContentSectionLeft>
+              <p className="first_text">
+                Tao (em chinês: A; Wade-Giles: tao; pinyin: dao) é o caracter
+                chinês para Caminho. Dentro do contexto da filosofia tradicional
+                e região Chinesa, o Tao é o conhecimento intuitivo da
+                &quot;vida&quot; que que não não pode ser apreendido
+                completamente - tão somente - como um ser conhecido, no entando,
+                através da experiência de vida real, cotidiana.
+              </p>
 
-          <img src={Img1} alt="mountains" />
-          <img src={Img2} alt="praying" />
+              <img src={Img1} alt="mountains" />
+              <img src={Img2} alt="praying" />
 
-          <p>
-            A principal obra do taoismo é o Tao Ching, um livro conciso e
-            ambíguo ambíguo que contém os ensinamentos atribuídos a Lao Zi
-            (chinês: AA, Laozi, Wade-Glies: Lao Tzu).
-          </p>
+              <p>
+                A principal obra do taoismo é o Tao Ching, um livro conciso e
+                ambíguo ambíguo que contém os ensinamentos atribuídos a Lao Zi
+                (chinês: AA, Laozi, Wade-Glies: Lao Tzu).
+              </p>
+            </ContentSectionLeft>
+            <ContentSectionRight>
+              <p>
+                O Tao não é apenas um caminho físico e espiritual; é
+                identificado com com o absoluto que, por divisão, gerou os
+                opostos/complementares yin yang, a partir dos quais todas as
+                &quot;dez mil coisas&quot; (ou todas as coisas) que existem no
+                Universo foram criadas. O Tao é o princípio fundamental do
+                taoísmo filosófico e religioso, fundado por Lao Zi.
+              </p>
 
-          <p>
-            O Tao não é apenas um caminho físico e espiritual; é identificado
-            com com o absoluto que, por divisão, gerou os opostos/complementares
-            yin yang, a partir dos quais todas as &quot;dez mil coisas&quot; (ou
-            todas as coisas) que existem no Universo foram criadas. O Tao é o
-            princípio fundamental do taoísmo filosófico e religioso, fundado por
-            Lao Zi.
-          </p>
-
-          <img src={Img3} alt="house" />
-          <img src={Img4} alt="buda" />
-        </ContentSection>
+              <img src={Img3} alt="house" />
+              <img src={Img4} alt="buda" />
+            </ContentSectionRight>
+          </ContentSection>
+        </ContentSectionWrapper>
 
         <VideoSection>
           <div className="content">
@@ -110,13 +131,13 @@ const PlenitudePage: React.FC = () => {
               </p>
 
               <p>
-                Em Filosofia, o &quote;Princípio de Plenitude&quote; foi
-                estudado pelo historiador americano Arthur Lovejoy, na sua
-                famosa obra: &quot;The Great Chain of Being&quot; (A Grande
-                Cadeia do Ser), de 1936, com base nas ideias de Platão, na qual
-                afirma que o universo é completo (pleno), porque se constitui de
-                uma diversidade máxima de formas, em que todas as formas
-                possíveis tornam-se atais.
+                Em Filosofia, o &quot;Princípio de Plenitude&quot; foi estudado
+                pelo historiador americano Arthur Lovejoy, na sua famosa obra:
+                &quot;The Great Chain of Being&quot; (A Grande Cadeia do Ser),
+                de 1936, com base nas ideias de Platão, na qual afirma que o
+                universo é completo (pleno), porque se constitui de uma
+                diversidade máxima de formas, em que todas as formas possíveis
+                tornam-se atais.
               </p>
             </div>
           </div>

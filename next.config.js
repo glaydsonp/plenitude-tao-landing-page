@@ -1,19 +1,26 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true'
-});
 const path = require('path');
 const withImages = require('next-images');
+const withPlugins = require('next-compose-plugins');
 
-module.exports = {
+const NextAppConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]
   },
-  target: 'serverless',
   trailingSlash: true
 };
 
-module.exports = withBundleAnalyzer({});
-
-module.exports = withImages({
-  esModule: true
-});
+/* Export declaration */
+module.exports = withPlugins(
+  [
+    [
+      withImages({
+        esModule: true,
+        // assetPrefix: 'http://plenitudetao.com',
+        webpack(config, options) {
+          return config;
+        }
+      })
+    ]
+  ],
+  NextAppConfig
+);

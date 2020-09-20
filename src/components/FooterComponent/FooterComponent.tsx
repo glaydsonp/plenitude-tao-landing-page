@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import NavLogo from '../../assets/icons/plenitude-logo.svg';
+// import NavLogo from '../../assets/icons/plenitude-logo.svg';
 
 import LinkedinLogo from '../../assets/icons/linkedin.svg';
 import FacebookLogo from '../../assets/icons/facebook.svg';
@@ -14,7 +14,7 @@ import {
   FooterContact,
   ContactIcons
 } from './styles';
-import FooterGroupLinksComponent from '../FooterGroupLinksComponent/FooterGroupLinks';
+import FooterGroupLinksComponent from '../FooterGroupLinksComponent';
 
 const FooterComponent: React.FC = () => {
   const linksPlenitude = [
@@ -119,7 +119,8 @@ const FooterComponent: React.FC = () => {
     <Footer>
       <FooterWrapper>
         <div className="logo">
-          <NavLogo />
+          {/* <NavLogo /> */}
+          <img src="/logo-nav.png" alt="Plenitude Tao" />
         </div>
 
         <FooterLinks>

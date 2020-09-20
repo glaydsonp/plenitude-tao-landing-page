@@ -11,7 +11,10 @@ export const FooterGroupLinks = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  padding-bottom: 20px;
+
+  @media (min-width: 1150px) {
+    padding-bottom: 20px;
+  }
 
   a {
     text-decoration: none;

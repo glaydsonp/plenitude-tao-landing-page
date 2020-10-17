@@ -22,7 +22,7 @@ const Header: React.FC = () => {
     {
       id: 2,
       description: 'Blog',
-      link: '/#'
+      link: 'http://blog.plenitudetao.com/'
     },
     {
       id: 3,

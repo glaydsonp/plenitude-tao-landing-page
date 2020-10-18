@@ -33,7 +33,7 @@ const FooterComponent: React.FC = () => {
     {
       id: 1,
       description: 'Destaque',
-      link: '#'
+      link: 'http://blog.plenitudetao.com/'
     },
     {
       id: 2,

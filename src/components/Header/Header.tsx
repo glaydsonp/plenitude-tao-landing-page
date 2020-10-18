@@ -32,7 +32,8 @@ const Header: React.FC = () => {
     {
       id: 4,
       description: 'Contato',
-      link: '/#'
+      link:
+        'https://api.whatsapp.com/send?phone=5519996921161&text=Oi%20queria%20falar%20com%20voc%C3%AAs'
     }
   ];
 

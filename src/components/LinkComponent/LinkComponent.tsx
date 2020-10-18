@@ -8,7 +8,7 @@ interface IProps {
 
 const LinkComponent: React.FC<IProps> = ({ link, description }) => (
   <Link href={link}>
-    <a>{description}</a>
+    <a target="_blank">{description}</a>
   </Link>
 );
 

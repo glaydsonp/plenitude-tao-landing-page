@@ -46,7 +46,13 @@ const Home: React.FC = () => {
                 essenciais, extraídos de diversas floras, flores e caules; para
                 o benefício da saúde de todos os seres!
               </p>
-              <button type="button">SAIBA MAIS</button>
+              <a
+                href="http://blog.plenitudetao.com/post/19"
+                target="_blank"
+                rel="noreferrer"
+              >
+                SAIBA MAIS
+              </a>
             </AromaterapiaText>
 
             <img src={AromaterapiaImg} alt="aromaterapia" />
@@ -65,7 +71,13 @@ const Home: React.FC = () => {
                 preparada e mais capaz de realizar essa tarefa com segurança,
                 confiança e foco.
               </p>
-              <button type="button">SAIBA MAIS</button>
+              <a
+                href="http://blog.plenitudetao.com/post/104"
+                target="_blank"
+                rel="noreferrer"
+              >
+                SAIBA MAIS
+              </a>
             </HipnobirthingSectionText>
 
             <img src={HipnobirthingImg} alt="HipnobirthingImg" />

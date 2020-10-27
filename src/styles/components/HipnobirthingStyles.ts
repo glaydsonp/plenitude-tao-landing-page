@@ -83,7 +83,7 @@ export const HipnobirthingSectionText = styled.div`
     }
   }
 
-  button {
+  a {
     margin-top: 20px;
     border: 1px solid #fff;
     border-radius: 16px;
@@ -93,9 +93,11 @@ export const HipnobirthingSectionText = styled.div`
     font-weight: 300;
     color: #fff;
     transition: 0.3s;
+    text-decoration: none;
 
     &:hover {
       box-shadow: ${(props) => props.theme.shadows.default};
+      text-decoration: underline;
     }
 
     @media (max-width: 1150px) {

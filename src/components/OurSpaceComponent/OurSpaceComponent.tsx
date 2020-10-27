@@ -14,37 +14,37 @@ const OurSpaceComponent: React.FC = () => {
       id: 1,
       icon: './thetahealing.svg',
       description: 'Thetahealing',
-      link: '#'
+      link: 'http://blog.plenitudetao.com/categorias/5'
     },
     {
       id: 2,
       icon: './acupuntura.svg',
       description: 'Acupuntura',
-      link: '#'
+      link: 'http://blog.plenitudetao.com/categorias/8'
     },
     {
       id: 3,
       icon: './hipnose.svg',
       description: 'Hipnose',
-      link: '#'
+      link: 'http://blog.plenitudetao.com/categorias/4'
     },
     {
       id: 4,
       icon: './aromaterapia.svg',
       description: 'Aromaterapia',
-      link: '#'
+      link: 'http://blog.plenitudetao.com/categorias/2'
     },
     {
       id: 5,
       icon: './terapia-de-regressao.svg',
       description: 'Terapia de Regressão',
-      link: '#'
+      link: 'http://blog.plenitudetao.com/categorias/7'
     },
     {
       id: 6,
       icon: './laser-ilib.svg',
       description: 'Laser Ilib',
-      link: '#'
+      link: 'http://blog.plenitudetao.com/categorias/9'
     }
   ];
   return (

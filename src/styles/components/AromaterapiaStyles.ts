@@ -56,7 +56,7 @@ export const AromaterapiaSectionWrapper = styled.div`
       }
     }
 
-    button {
+    a {
       font-size: 1.5rem;
       font-weight: 300;
       color: ${(props) => props.theme.colors.font_primary};
@@ -68,9 +68,11 @@ export const AromaterapiaSectionWrapper = styled.div`
       width: 50%;
       min-width: 320px;
       margin: 20px auto;
+      text-decoration: none;
 
       &:hover {
         box-shadow: ${(props) => props.theme.shadows.default};
+        text-decoration: underline;
       }
 
       @media (max-width: 1150px) {

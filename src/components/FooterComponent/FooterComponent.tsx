@@ -21,12 +21,12 @@ const FooterComponent: React.FC = () => {
     {
       id: 1,
       description: 'Nossa história',
-      link: '#'
+      link: 'plenitude'
     },
     {
       id: 2,
       description: 'Bastidores',
-      link: '#'
+      link: 'https://instagram.com/plenitudetao'
     }
   ];
   const linksBlog = [
@@ -45,37 +45,37 @@ const FooterComponent: React.FC = () => {
     {
       id: 1,
       description: 'Aromaterapia',
-      link: '#'
+      link: 'http://blog.plenitudetao.com/categorias/2'
     },
     {
       id: 2,
       description: 'Thetahealing',
-      link: '#'
+      link: 'http://blog.plenitudetao.com/categorias/5'
     },
-    {
-      id: 3,
-      description: 'Hipnobirthing',
-      link: '#'
-    },
+    // {
+    //   id: 3,
+    //   description: 'Hipnobirthing',
+    //   link: '#'
+    // },
     {
       id: 4,
       description: 'Laser',
-      link: '#'
+      link: 'http://blog.plenitudetao.com/categorias/9'
     },
     {
       id: 5,
       description: 'Hipnose',
-      link: '#'
+      link: 'http://blog.plenitudetao.com/categorias/4'
     },
     {
       id: 6,
       description: 'Acupuntura',
-      link: '#'
+      link: 'http://blog.plenitudetao.com/categorias/8'
     },
     {
       id: 7,
       description: 'Terapia de Regressão',
-      link: '#'
+      link: 'http://blog.plenitudetao.com/categorias/7'
     }
   ];
   const linksLoja = [
@@ -99,12 +99,12 @@ const FooterComponent: React.FC = () => {
     {
       id: 1,
       description: 'Eventos',
-      link: '#'
+      link: 'https://www.facebook.com/plenitudetaoterapias'
     },
     {
       id: 2,
       description: 'Lives',
-      link: '#'
+      link: 'https://www.facebook.com/plenitudetaoterapias'
     }
   ];
 
@@ -140,21 +140,27 @@ const FooterComponent: React.FC = () => {
         <FooterContact>
           <h3>FALE COM A GENTE</h3>
           <ContactIcons>
-            <Link href="#">
-              <a>
-                <LinkedinLogo />
-              </a>
-            </Link>
-            <Link href="#">
-              <a>
-                <FacebookLogo />
-              </a>
-            </Link>
-            <Link href="#">
-              <a>
-                <InstagramLogo />
-              </a>
-            </Link>
+            <a
+              href="https://www.linkedin.com/company/plenitude-tao"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LinkedinLogo />
+            </a>
+            <a
+              href="https://www.facebook.com/plenitudetaoterapias"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FacebookLogo />
+            </a>
+            <a
+              href="https://instagram.com/plenitudetao"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <InstagramLogo />
+            </a>
           </ContactIcons>
           <div>{phoneNumber}</div>
           <div>{address}</div>
